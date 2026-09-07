@@ -29,16 +29,13 @@ test.beforeEach(async ({ page }) => {
   await homePage.assertYourFeedTabIsVisible();
 });
 
-test('Create an article without description', async () => {
+test('create an article without body text', async () => {
   await homePage.clickNewArticleLink();
   await createArticlePage.fillArticleTitleField('This is a test article title');
-  await createArticlePage.fillArticleBodyField('This is a test article body');
+  await createArticlePage.fillArticleDescriptionField('This is a test article Description');
   await createArticlePage.fillArticleTagsField('test');
   await createArticlePage.clickPublishArticleButton();
   await createArticlePage.assertErrorMessageContainsText(
-    'Article description cannot be empty',
+    'Article body cannot be empty',
   );
 });
-
-
-

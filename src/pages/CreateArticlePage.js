@@ -46,6 +46,7 @@ export class CreateArticlePage {
     await test.step(`Fill the 'Enter tags' field with '${tags}'`,
       async () => {
         await this.page.getByPlaceholder('Enter tags').fill(tags);
+        await this.page.keyboard.press('Enter');
       }
     );
   }

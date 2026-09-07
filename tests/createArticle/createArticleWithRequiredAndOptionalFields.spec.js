@@ -36,7 +36,6 @@ test('Create an article with required and optional fields', async () => {
   await createArticlePage.fillArticleBodyField('This is a test article body');
   await createArticlePage.fillArticleTagsField('test');
   await createArticlePage.clickPublishArticleButton();
-  await createArticlePage.clickPublishArticleButton();
   await articlePage.assertArticleUrl();
 });
 
